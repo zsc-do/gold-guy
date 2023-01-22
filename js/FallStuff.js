@@ -1,4 +1,4 @@
-export function FallStuff(x,y,guy,score){
+export function FallStuff(x,y,guy,score,randSpeed){
 
     this.x = x;
     this.y = y;
@@ -21,7 +21,7 @@ export function FallStuff(x,y,guy,score){
     //设置小球的速度和加速度
     this.v = 0;
 
-    this.SPEED = 300;//定义加速度
+    this.SPEED = randSpeed;//定义加速度
     this.INTERVAL = 20;
 
     this.dom =  document.createElement('div')
@@ -44,7 +44,7 @@ FallStuff.prototype.fall = function(){
     this.y =  this.top;
 
 
-    if(this.y > 420 && this.x > this.guy.x -30 && this.x < this.guy.x + 50){
+    if(this.y > 400 && this.x > this.guy.x -30 && this.x < this.guy.x + 50){
 
         this.crash();
     }

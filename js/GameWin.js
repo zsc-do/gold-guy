@@ -12,6 +12,8 @@ export function GameWin(width,height){
     this.dom.style.top = '10%';
 
     document.body.appendChild(this.dom);
+
+    this.dom.classList.add('background')
     
 }
 

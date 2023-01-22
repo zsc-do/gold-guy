@@ -19,3 +19,8 @@ export function prototype(child, parent) {
     prototype.constructor = child;
     child.prototype = prototype;
 }
+
+
+export function Random(min, max) {
+    return Math.round(Math.random() * (max - min)) + min;
+}

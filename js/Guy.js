@@ -1,9 +1,10 @@
 import { calcExpression } from '../utils/Utils.js'
 
-export function Guy(x,y){
+export function Guy(x,y,gameWin){
 
     this.x = x;
     this.y = y;
+    this.gameWin = gameWin;
 
 
     this.dom = document.createElement('div')
@@ -30,18 +31,25 @@ Guy.prototype.listenKeyBoard = function(){
 
             this.dom.classList.remove('guy-move')
 
-            this.dom.classList.add('guy-reverse')
-
-            this.dom.classList.add('guy-reverse-move')
+        
 
             if(!this.dom.classList.contains('guy-reverse-move')){
                 
+                this.dom.classList.add('guy-reverse')
+
                 this.dom.classList.add('guy-reverse-move')
+
                 setTimeout(()=>{
                     this.dom.classList.remove('guy-reverse-move')
                 },150)
                 
             }
+
+
+            if(this.x === 0){
+                return;
+            }
+
 
             let leftAfter = calcExpression(this.dom.style.left,20,'-')
             this.dom.style.left = leftAfter;
@@ -54,11 +62,12 @@ Guy.prototype.listenKeyBoard = function(){
 
             this.dom.classList.add('guy')
 
-            this.dom.classList.add('guy-remove')
 
 
             if(!this.dom.classList.contains('guy-move')){
                 
+                this.dom.classList.add('guy')
+
                 this.dom.classList.add('guy-move')
                 setTimeout(()=>{
                     this.dom.classList.remove('guy-move')
@@ -67,6 +76,10 @@ Guy.prototype.listenKeyBoard = function(){
             }
 
             
+
+            if(this.x >= this.gameWin.width - 100){
+                return;
+            }
 
             let rightAfter = calcExpression(this.dom.style.left,20,'+')
             this.dom.style.left = rightAfter;

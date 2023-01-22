@@ -7,6 +7,7 @@ export function Score(title,x,y){
     
     this.dom.style.width = '100px';
     this.dom.style.height = '20px';
+    this.dom.style.color = 'red'
 
     this.dom.style.position = 'absolute';
     this.dom.style.left = this.x + 'px';

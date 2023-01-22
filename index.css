@@ -6,9 +6,9 @@ body,html{
     perspective: 800px;
 }
 
-*{
+/* *{
     border: 1px solid red;
-}
+} */
 
 .guy{
     background: url(./img/guy.jpg);
@@ -54,7 +54,7 @@ body,html{
 .coin{
     background: url(./img/coin.png);
     background-size:cover;
-    animation: coin-move 4s linear infinite;
+    /* animation: coin-move 4s linear infinite; */
 }
 
 @keyframes coin-move{
@@ -66,7 +66,7 @@ body,html{
 .bomb{
     background: url(./img/bomb.png);
     background-size:cover;
-    animation: bomb-move 4s linear infinite;
+    /* animation: bomb-move 4s linear infinite; */
 }
 
 @keyframes bomb-move{
@@ -74,6 +74,11 @@ body,html{
     100%{transform: rotateY(360deg);}
 }
 
+
+.background{
+    background: url(./img/backgroud.jpg);
+    background-size:cover;
+}
 
 
 
