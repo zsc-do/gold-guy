@@ -6,6 +6,9 @@ import {Score} from './js/Score.js'
 
 let gameWin = new GameWin(800,500);
 
+
+
+
 let score = new Score('分数:',0,0)
 gameWin.addContent(score.dom)
 
