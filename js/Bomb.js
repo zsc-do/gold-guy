@@ -1,24 +1,21 @@
 import { FallStuff } from './FallStuff.js';
 import { calcExpression, prototype } from '../Utils/Utils.js'
 
-export function Gold(x,y,guy,score){
+export function Bomb(x,y,guy,score){
+
     FallStuff.call(this, x,y,guy,score);
-    this.dom.classList.add('coin')
+    this.dom.classList.add('bomb')
 }
 
 
-prototype(Gold, FallStuff);
+prototype(Bomb, FallStuff);
 
+Bomb.prototype.crash = function(){
 
-Gold.prototype.crash = function(){
+    console.log('die...')
 
-    console.log('碰到了')
-
-
-    this.score.add()
 
     let parentNode = this.dom.parentElement
     parentNode.removeChild(this.dom);
     clearInterval(this.timer);
 }
-
